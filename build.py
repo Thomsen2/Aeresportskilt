@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parent
 DATA = json.loads((ROOT / "data" / "produkter.json").read_text(encoding="utf-8"))
 PRODUCTS = DATA["products"]
 SECTIONS = DATA["sections"]
-ASSET_CSS = "/styles.css?v=236"
+ASSET_CSS = "/styles.css?v=243"
 ASSET_JS = "/script.js?v=63"
 
 BORDKORT_OG_IMAGE = "https://pub-a65460f11bff4b4c9a65a6943613a5ef.r2.dev/cute%20chat.png"
@@ -478,10 +478,11 @@ def bordkort_landing_jsonld(*, url: str, name: str, description: str, crumb: str
 
 CONTACT_EMAIL = "Thomsen2@gmail.com"
 
-CONTACT_FOOTER = f"""            <p class="footer-contact">Bo Thomsen &middot; 2791 Dragør &middot; <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a></p>"""
+CONTACT_FOOTER = f"""            <p class="footer-contact">Bo Thomsen &middot; 2791 Dragør &middot; CVR 44597209 &middot; <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a></p>"""
 
 CONTACT_ABOUT = f"""            <p class="contact-detail">Bo Thomsen</p>
             <p class="contact-detail">2791 Dragør</p>
+            <p class="contact-detail">CVR: 44597209</p>
             <p class="contact-detail">Mail: <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a></p>"""
 
 ABOUT_AESPORT = "Hos Æresportskilt.dk skaber vi håndlavede æresportskilte med kærlighed til træhåndværket. Hvert skilt udføres i nøje udvalgte træsorter, hvor kvalitet og detaljer er i fokus. Vi tilbyder personlig service og skræddersyede løsninger, så dit skilt bliver unikt og holder i generationer."
