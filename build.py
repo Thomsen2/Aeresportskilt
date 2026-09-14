@@ -847,20 +847,21 @@ def main():
     # Bordkort.dk is built in the separate repo Thomsen2/bordkort
 
     urls = [
-        "https://æresportskilt.dk/",
-        "https://æresportskilt.dk/hjerte/",
-        "https://æresportskilt.dk/vaabenskjold/",
-        "https://æresportskilt.dk/egetrae/",
-        "https://æresportskilt.dk/bryllup/",
-        "https://æresportskilt.dk/soelvbryllup/",
-        "https://æresportskilt.dk/kobberbryllup/",
-        "https://æresportskilt.dk/guldbryllup/",
-        "https://æresportskilt.dk/gavekort/",
-        "https://æresportskilt.dk/fodselstavle/",
-        "https://æresportskilt.dk/andre-skilte/",
-        "https://æresportskilt.dk/velkomst-skilt/",
-        "https://æresportskilt.dk/eget-design/",
-        "https://æresportskilt.dk/om-os/",
+        "https://xn--resportskilt-5cb.dk/",
+        "https://xn--resportskilt-5cb.dk/hjerte/",
+        "https://xn--resportskilt-5cb.dk/vaabenskjold/",
+        "https://xn--resportskilt-5cb.dk/egetrae/",
+        "https://xn--resportskilt-5cb.dk/bryllup/",
+        "https://xn--resportskilt-5cb.dk/soelvbryllup/",
+        "https://xn--resportskilt-5cb.dk/kobberbryllup/",
+        "https://xn--resportskilt-5cb.dk/guldbryllup/",
+        "https://xn--resportskilt-5cb.dk/gavekort/",
+        "https://xn--resportskilt-5cb.dk/fodselstavle/",
+        "https://xn--resportskilt-5cb.dk/andre-skilte/",
+        "https://xn--resportskilt-5cb.dk/velkomst-skilt/",
+        "https://xn--resportskilt-5cb.dk/eget-design/",
+        "https://xn--resportskilt-5cb.dk/historie/",
+        "https://xn--resportskilt-5cb.dk/om-os/",
     ]
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for i, loc in enumerate(urls):
