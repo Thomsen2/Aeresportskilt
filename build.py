@@ -10,8 +10,8 @@ ROOT = Path(__file__).resolve().parent
 DATA = json.loads((ROOT / "data" / "produkter.json").read_text(encoding="utf-8"))
 PRODUCTS = DATA["products"]
 SECTIONS = DATA["sections"]
-ASSET_CSS = "/styles.css?v=243"
-ASSET_JS = "/script.js?v=63"
+ASSET_CSS = "/styles.css?v=248"
+ASSET_JS = "/script.js?v=64"
 
 BORDKORT_OG_IMAGE = "https://pub-a65460f11bff4b4c9a65a6943613a5ef.r2.dev/cute%20chat.png"
 BORDKORT_OG_ALT = "Personlige bordkort i træ på borddækning"
@@ -691,19 +691,19 @@ def main():
         copper = copper_named + [p for p in shields[:2] + hearts[:3] if p not in copper_named]
 
     pages = [
-        dict(slug="home", path="index.html", title="Æresportskilt i træ – hjerte og våbenskjold til bryllup",
-             description="Personligt æresportskilt i træ til bryllup, kobberbryllup, sølvbryllup og guldbryllup. Håndlavet i Dragør. Hjerte eller våbenskjold fra 199 kr.",
+        dict(slug="home", path="index.html", title="Æresportskilt i træ til bryllup og fest – fra 199 kr.",
+             description="Personligt æresportskilt i træ til bryllup, kobber-, sølv- og guldbryllup. Håndlavet i Dragør. Vælg form og træsort fra 199 kr.",
              h1='<a href="/">Æresportskilt til bryllup og fest</a>', canonical="https://æresportskilt.dk/",
              kicker=False, crumb="", intro_h2="Personlige æresportskilte i træ",
              intro=["Hos Æresportskilt.dk laver vi personlige æresportskilte i træ til bryllup, kobberbryllup, sølvbryllup og guldbryllup.",
-                    "Vælg mellem hjerte eller våbenskjold i birkefiner, egetræ eller valnød, og få et personligt æresportskilt med jeres navne og dato.",
+                    {"html": 'Start med formen: <a href="/hjerte/">træ hjerte til æresport</a> eller <a href="/vaabenskjold/">våbenskjold</a>. Alle graveres med navne og dato.'},
                     "Alle skilte fremstilles på bestilling. Se også undersiderne til hjerte, våbenskjold og de enkelte anledninger."],
              products=hearts, faq=AESPORT_FAQ),
-        dict(slug="hjerte", path="hjerte/index.html", title="Hjerte til æresport i træ – personligt æresportskilt",
-             description="Bestil et hjerte til æresport i træ. Personligt æresportskilt med navne og dato i birkefiner, egetræ eller valnød. Håndlavet i Dragør fra 199 kr.",
-             h1="Hjerte til æresport i træ", canonical="https://æresportskilt.dk/hjerte/", kicker=True, crumb="Hjerte",
-             intro_h2="Personligt æresportskilt som hjerte",
-             intro=["Et hjerte til æresport er det klassiske valg til bryllup og andre kærlighedsanledninger.",
+        dict(slug="hjerte", path="hjerte/index.html", title="Træ hjerte til æresport – personligt skilt fra 199 kr.",
+             description="Træ hjerte til æresport. Personligt æresportskilt med navne og dato i birkefiner, egetræ eller valnød. Fra 199 kr. Håndlavet i Dragør.",
+             h1="Træ hjerte til æresport", canonical="https://æresportskilt.dk/hjerte/", kicker=True, crumb="Hjerte",
+             intro_h2="Personligt hjerteformet æresportskilt",
+             intro=["Et træ hjerte til æresport er det klassiske skilt til porten ved bryllup, kobberbryllup, sølvbryllup og guldbryllup.",
                     "Vi laver hjerterne i birkefiner, egetræ og valnød. Alle fremstilles på bestilling med jeres navne og dato."],
              products=hearts, faq=[("Hvad koster et hjerte til æresport?", "Et hjerte i birkefiner starter ved 199 kr. Prisen står ved hver model."),
                                   ("Hvilken størrelse har hjertet?", "De fleste hjerter måler 31 x 33 cm.")]),

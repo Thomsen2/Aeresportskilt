@@ -215,6 +215,7 @@
     // Specielle bordkort: vis miljøbillede (tallerken) i overlay
     document.querySelectorAll('.sign-preview').forEach(function (preview) {
         preview.addEventListener('click', function (e) {
+            if (preview.closest('.product-card--teaser')) return;
             e.stopPropagation();
 
             if (preview.classList.contains('product-card__media')) {

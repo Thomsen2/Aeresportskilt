@@ -2077,3 +2077,25 @@ footer a:hover {
     font-size: 0.95rem;
     line-height: 1.45;
 }
+
+.product-teaser {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.product-teaser .product-card__cta {
+    margin-top: 0.75rem;
+    font-weight: 600;
+    color: var(--oak);
+}
+
+.home-hjerte-all {
+    text-align: center;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.home-hjerte-all .btn-submit {
+    display: inline-block;
+    text-decoration: none;
+}
