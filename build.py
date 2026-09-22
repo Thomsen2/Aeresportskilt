@@ -659,6 +659,7 @@ AESPORT_FAQ = [
     ("Hvad er et æresportskilt?", "Et æresportskilt er et personligt skilt i træ, der hænges op som en del af æresporten – typisk ved indgangen til festen. Det viser navne og dato og gør porten mere personlig."),
     ("Hvad kan der stå på et æresportskilt?", "I kan typisk få navne, datoer og år på skiltet efter jeres ønsker. På forespørgselsformularerne skriver I den tekst, I gerne vil have på skiltet."),
     ("Hvordan bestiller jeg et æresportskilt?", "Vælg en model, udfyld formularen og send forespørgslen. I kan vælge afhentning i Dragør eller forsendelse."),
+    ("Bestilling", "Udkast til design sendes på mail til godkendelse. Kunden kontrollerer design og evt. stavefejl. Skiltet bliver produceret, så snart det er godkendt, og det kan ikke laves om eller returneres."),
 ]
 
 BORDKORT_FAQ = [
@@ -706,14 +707,16 @@ def main():
              intro=["Et træ hjerte til æresport er det klassiske skilt til porten ved bryllup, kobberbryllup, sølvbryllup og guldbryllup.",
                     "Vi laver hjerterne i birkefiner, egetræ og valnød. Alle fremstilles på bestilling med jeres navne og dato."],
              products=hearts, faq=[("Hvad koster et hjerte til æresport?", "Et hjerte i birkefiner starter ved 199 kr. Prisen står ved hver model."),
-                                  ("Hvilken størrelse har hjertet?", "De fleste hjerter måler 31 x 33 cm.")]),
+                                  ("Hvilken størrelse har hjertet?", "De fleste hjerter måler 31 x 33 cm."),
+                                  ("Bestilling", "Udkast til design sendes på mail til godkendelse. Kunden kontrollerer design og evt. stavefejl. Skiltet bliver produceret, så snart det er godkendt, og det kan ikke laves om eller returneres.")]),
         dict(slug="vaabenskjold", path="vaabenskjold/index.html", title="Våbenskjold til æresport – æresportskilt i træ",
              description="Bestil et våbenskjold til æresport i træ. Klassisk æresportskilt med navne og dato i birkefiner, egetræ eller valnød.",
              h1="Våbenskjold til æresport", canonical="https://æresportskilt.dk/vaabenskjold/", kicker=True, crumb="Våbenskjold",
              intro_h2="Personligt æresportskilt som våbenskjold",
              intro=["Et våbenskjold giver et klassisk udtryk på æresporten og passer godt til sølv- og guldbryllup.",
                     "Skiltet graveres med navne, dato og eventuelt årstal."],
-             products=shields, faq=[("Hvornår vælger man våbenskjold?", "Ofte til sølv- og guldbryllup, eller når I vil have et mere højtideligt udtryk end hjertet.")]),
+             products=shields, faq=[("Hvornår vælger man våbenskjold?", "Ofte til sølv- og guldbryllup, eller når I vil have et mere højtideligt udtryk end hjertet."),
+                                  ("Bestilling", "Udkast til design sendes på mail til godkendelse. Kunden kontrollerer design og evt. stavefejl. Skiltet bliver produceret, så snart det er godkendt, og det kan ikke laves om eller returneres.")]),
         dict(slug="egetrae", path="egetrae/index.html", title="Æresportskilt i egetræ – hjerte og våbenskjold",
              description="Æresportskilt i egetræ med personlig gravering. Hjerte eller våbenskjold til bryllup og mærkedage. Fra 249 kr.",
              h1="Æresportskilt i egetræ", canonical="https://æresportskilt.dk/egetrae/", kicker=True, crumb="Egetræ",
