@@ -2099,3 +2099,10 @@ footer a:hover {
     display: inline-block;
     text-decoration: none;
 }
+
+.faq-emphasis {
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
