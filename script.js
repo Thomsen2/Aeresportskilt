@@ -211,6 +211,25 @@
         bindBubbling(link, link);
     });
 
+    document.querySelectorAll('.product-thumbs').forEach(function (menu) {
+        menu.addEventListener('click', function (e) {
+            var btn = e.target.closest('button');
+            if (!btn || !menu.contains(btn)) return;
+            e.preventDefault();
+            e.stopPropagation();
+            menu.querySelectorAll('button').forEach(function (other) {
+                other.classList.toggle('is-active', other === btn);
+            });
+            var src = btn.getAttribute('data-src');
+            var overlay = document.getElementById('imgOverlay');
+            var overlayImg = document.getElementById('imgOverlayImg');
+            if (!src || !overlay || !overlayImg) return;
+            overlayImg.src = src;
+            overlayImg.alt = btn.getAttribute('data-alt') || '';
+            overlay.style.display = 'flex';
+        });
+    });
+
     // Klik-zoom på alle produktbilleder: 300% af sektionens hover-størrelse
     // Specielle bordkort: vis miljøbillede (tallerken) i overlay
     document.querySelectorAll('.sign-preview').forEach(function (preview) {
@@ -638,6 +657,14 @@ document.querySelectorAll('.sign-form').forEach(function (form) {
         var pickupChecked = pickupToggle ? pickupToggle.checked : false;
         var mountingEl = this.querySelector('.mounting-toggle');
         var mountingChecked = mountingEl ? mountingEl.checked : false;
+
+        var variants = [];
+        this.querySelectorAll('.variant-toggle:checked').forEach(function (el) {
+            variants.push(el.value);
+        });
+        if (variants.length) {
+            besked = (besked ? besked + '\n\n' : '') + variants.join('\n');
+        }
 
         if (textarea && !besked) {
             showSiteMessage('Udfyld venligst din besked.');

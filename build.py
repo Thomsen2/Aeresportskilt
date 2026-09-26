@@ -10,8 +10,8 @@ ROOT = Path(__file__).resolve().parent
 DATA = json.loads((ROOT / "data" / "produkter.json").read_text(encoding="utf-8"))
 PRODUCTS = DATA["products"]
 SECTIONS = DATA["sections"]
-ASSET_CSS = "/styles.css?v=251"
-ASSET_JS = "/script.js?v=64"
+ASSET_CSS = "/styles.css?v=273"
+ASSET_JS = "/script.js?v=70"
 
 BORDKORT_OG_IMAGE = "https://pub-a65460f11bff4b4c9a65a6943613a5ef.r2.dev/cute%20chat.png"
 BORDKORT_OG_ALT = "Personlige bordkort i træ på borddækning"
@@ -286,6 +286,19 @@ def nav_html(active: str) -> str:
                     </span>
                     Bordkort
                 </a>
+                <a href="/bryllup/" class="{cls('bryllup') if active in ('bryllup','kobberbryllup','soelvbryllup','guldbryllup') else 'nav-link'}">
+                    <span class="nav-icon nav-icon--rings" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><circle cx="9" cy="13" r="5.5"/><circle cx="15" cy="11" r="5.5"/></svg>
+                        <span class="ring-bubbles" aria-hidden="true">
+                            <span class="rb"><svg viewBox="0 0 24 24"><circle cx="9" cy="13" r="5.5"/><circle cx="15" cy="11" r="5.5"/></svg></span>
+                            <span class="rb"><svg viewBox="0 0 24 24"><circle cx="9" cy="13" r="5.5"/><circle cx="15" cy="11" r="5.5"/></svg></span>
+                            <span class="rb"><svg viewBox="0 0 24 24"><circle cx="9" cy="13" r="5.5"/><circle cx="15" cy="11" r="5.5"/></svg></span>
+                            <span class="rb"><svg viewBox="0 0 24 24"><circle cx="9" cy="13" r="5.5"/><circle cx="15" cy="11" r="5.5"/></svg></span>
+                            <span class="rb"><svg viewBox="0 0 24 24"><circle cx="9" cy="13" r="5.5"/><circle cx="15" cy="11" r="5.5"/></svg></span>
+                        </span>
+                    </span>
+                    Bryllup
+                </a>
                 <a href="/fodselstavle/" class="{cls('fodselstavle')}">
                     <span class="nav-icon nav-icon--pram" aria-hidden="true">
                         <svg viewBox="0 0 24 24"><path d="M7 18.5a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0zm13 0a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0zM18.5 16H6.2l-.7-3.2h11.3c1.1 0 1.9.7 2.1 1.6l.6 1.6zM8.5 4.5h4.2c1.8 0 3.3 1.3 3.6 3.1l.5 2.2H7.8l.7-5.3zM8.5 4.5V3h3"/></svg>
@@ -303,18 +316,9 @@ def nav_html(active: str) -> str:
                     <span class="nav-icon nav-icon--spark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></span>
                     Andre skilte
                 </a>
-                <a href="/bryllup/" class="{cls('bryllup') if active in ('bryllup','kobberbryllup','soelvbryllup','guldbryllup') else 'nav-link'}">
-                    <span class="nav-icon nav-icon--rings" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><circle cx="9" cy="13" r="5.5"/><circle cx="15" cy="11" r="5.5"/></svg>
-                        <span class="ring-bubbles" aria-hidden="true">
-                            <span class="rb"><svg viewBox="0 0 24 24"><circle cx="9" cy="13" r="5.5"/><circle cx="15" cy="11" r="5.5"/></svg></span>
-                            <span class="rb"><svg viewBox="0 0 24 24"><circle cx="9" cy="13" r="5.5"/><circle cx="15" cy="11" r="5.5"/></svg></span>
-                            <span class="rb"><svg viewBox="0 0 24 24"><circle cx="9" cy="13" r="5.5"/><circle cx="15" cy="11" r="5.5"/></svg></span>
-                            <span class="rb"><svg viewBox="0 0 24 24"><circle cx="9" cy="13" r="5.5"/><circle cx="15" cy="11" r="5.5"/></svg></span>
-                            <span class="rb"><svg viewBox="0 0 24 24"><circle cx="9" cy="13" r="5.5"/><circle cx="15" cy="11" r="5.5"/></svg></span>
-                        </span>
-                    </span>
-                    Bryllup
+                <a href="/dekorations-kranse/" class="{cls('dekorations-kranse')}">
+                    <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7.2"/><circle cx="12" cy="4.4" r="1.15"/><circle cx="17.4" cy="6.6" r="1.15"/><circle cx="19.6" cy="12" r="1.15"/><circle cx="17.4" cy="17.4" r="1.15"/><circle cx="12" cy="19.6" r="1.15"/><circle cx="6.6" cy="17.4" r="1.15"/><circle cx="4.4" cy="12" r="1.15"/><circle cx="6.6" cy="6.6" r="1.15"/></svg></span>
+                    Dekorations kranse
                 </a>
                 <a href="/eget-design/" class="{cls('eget-design')}">
                     <span class="nav-icon nav-icon--spark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.5 5.5L19 10l-5.5 1.5L12 17l-1.5-5.5L5 10l5.5-1.5L12 3zM18.5 15.5l.8 2.7 2.7.8-2.7.8-.8 2.7-.8-2.7-2.7-.8 2.7-.8.8-2.7zM5.5 16.5l.6 2 2 .6-2 .6-.6 2-.6-2-2-.6 2-.6.6-2z"/></svg></span>
@@ -519,7 +523,7 @@ def about_section_bordkort() -> str:
 FOOTER = f"""    <footer>
         <div class="container">
 {CONTACT_FOOTER}
-            <p>&copy; 2026 Æresportskilt.dk. Alle rettigheder forbeholdes. &mdash; <a href="/hjerte/">Hjerte</a> &mdash; <a href="/vaabenskjold/">Våbenskjold</a> &mdash; <a href="/egetrae/">Egetræ</a> &mdash; <a href="/bryllup/">Bryllup</a> &mdash; <a href="/kobberbryllup/">Kobberbryllup</a> &mdash; <a href="/soelvbryllup/">Sølvbryllup</a> &mdash; <a href="/guldbryllup/">Guldbryllup</a> &mdash; <a href="/gavekort/">Gavekort</a> &mdash; <a href="https://bordkort.dk/">Bordkort</a> &mdash; <a href="/fodselstavle/">Fødselstavle</a> &mdash; <a href="/velkomst-skilt/">Velkomstskilt</a> &mdash; <a href="/andre-skilte/">Andre skilte</a> &mdash; <a href="/eget-design/">Eget design</a> &mdash; <a href="/om-os/">Om os</a></p>
+            <p>&copy; 2026 Æresportskilt.dk. Alle rettigheder forbeholdes. &mdash; <a href="/hjerte/">Hjerte</a> &mdash; <a href="/vaabenskjold/">Våbenskjold</a> &mdash; <a href="/egetrae/">Egetræ</a> &mdash; <a href="/bryllup/">Bryllup</a> &mdash; <a href="/kobberbryllup/">Kobberbryllup</a> &mdash; <a href="/soelvbryllup/">Sølvbryllup</a> &mdash; <a href="/guldbryllup/">Guldbryllup</a> &mdash; <a href="/gavekort/">Gavekort</a> &mdash; <a href="https://bordkort.dk/">Bordkort</a> &mdash; <a href="/fodselstavle/">Fødselstavle</a> &mdash; <a href="/velkomst-skilt/">Velkomstskilt</a> &mdash; <a href="/andre-skilte/">Andre skilte</a> &mdash; <a href="/dekorations-kranse/">Dekorations kranse</a> &mdash; <a href="/eget-design/">Eget design</a> &mdash; <a href="/om-os/">Om os</a></p>
         </div>
     </footer>"""
 
@@ -862,6 +866,7 @@ def main():
         "https://xn--resportskilt-5cb.dk/gavekort/",
         "https://xn--resportskilt-5cb.dk/fodselstavle/",
         "https://xn--resportskilt-5cb.dk/andre-skilte/",
+        "https://xn--resportskilt-5cb.dk/dekorations-kranse/",
         "https://xn--resportskilt-5cb.dk/velkomst-skilt/",
         "https://xn--resportskilt-5cb.dk/eget-design/",
         "https://xn--resportskilt-5cb.dk/historie/",

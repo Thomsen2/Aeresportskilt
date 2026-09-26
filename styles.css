@@ -1167,6 +1167,57 @@ body.hide-aesport-intro > .faq-section {
     cursor: zoom-in;
 }
 
+.product-thumbs {
+    position: relative;
+    z-index: 7;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    width: 100%;
+    margin: -0.35rem 0 0.65rem;
+    justify-content: center;
+}
+
+.product-thumbs button {
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    cursor: pointer;
+    flex: 0 0 46px;
+    line-height: 0;
+    appearance: none;
+}
+
+.product-thumbs button:focus {
+    outline: none;
+}
+
+.product-thumbs:has(button.is-active) button:not(.is-active) {
+    opacity: 0.35;
+}
+
+.product-thumbs button.is-active {
+    position: relative;
+    z-index: 2;
+    border-color: var(--ink);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--ink);
+    transform: scale(1.22);
+    opacity: 1;
+}
+
+.product-thumbs img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    pointer-events: none;
+}
+
 /* Hover-zoom på æresportskilte og bordkort (175% = 75% større) */
 .product-card--zoom,
 .product-card--bordkort {
@@ -1215,6 +1266,21 @@ body.hide-aesport-intro > .faq-section {
     color: var(--muted);
     margin: 0 0 0.35rem;
     line-height: 1.3;
+}
+
+.product-card--dekorations-krans .product-card__title,
+.product-card--dekorations-krans-georg-jensen .product-card__title {
+    min-height: 0;
+    margin-bottom: 0.05rem;
+}
+
+.product-card--dekorations-krans .product-card__size,
+.product-card--dekorations-krans-georg-jensen .product-card__size {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-top: 0;
+    line-height: 1.2;
 }
 
 .product-card__blurb {
