@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parent
 DATA = json.loads((ROOT / "data" / "produkter.json").read_text(encoding="utf-8"))
 PRODUCTS = DATA["products"]
 SECTIONS = DATA["sections"]
-ASSET_CSS = "/styles.css?v=273"
+ASSET_CSS = "/styles.css?v=277"
 ASSET_JS = "/script.js?v=70"
 
 BORDKORT_OG_IMAGE = "https://pub-a65460f11bff4b4c9a65a6943613a5ef.r2.dev/cute%20chat.png"
@@ -318,7 +318,7 @@ def nav_html(active: str) -> str:
                 </a>
                 <a href="/dekorations-kranse/" class="{cls('dekorations-kranse')}">
                     <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7.2"/><circle cx="12" cy="4.4" r="1.15"/><circle cx="17.4" cy="6.6" r="1.15"/><circle cx="19.6" cy="12" r="1.15"/><circle cx="17.4" cy="17.4" r="1.15"/><circle cx="12" cy="19.6" r="1.15"/><circle cx="6.6" cy="17.4" r="1.15"/><circle cx="4.4" cy="12" r="1.15"/><circle cx="6.6" cy="6.6" r="1.15"/></svg></span>
-                    Dekorations kranse
+                    Dekorationskranse
                 </a>
                 <a href="/eget-design/" class="{cls('eget-design')}">
                     <span class="nav-icon nav-icon--spark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.5 5.5L19 10l-5.5 1.5L12 17l-1.5-5.5L5 10l5.5-1.5L12 3zM18.5 15.5l.8 2.7 2.7.8-2.7.8-.8 2.7-.8-2.7-2.7-.8 2.7-.8.8-2.7zM5.5 16.5l.6 2 2 .6-2 .6-.6 2-.6-2-2-.6 2-.6.6-2z"/></svg></span>
@@ -523,7 +523,7 @@ def about_section_bordkort() -> str:
 FOOTER = f"""    <footer>
         <div class="container">
 {CONTACT_FOOTER}
-            <p>&copy; 2026 Æresportskilt.dk. Alle rettigheder forbeholdes. &mdash; <a href="/hjerte/">Hjerte</a> &mdash; <a href="/vaabenskjold/">Våbenskjold</a> &mdash; <a href="/egetrae/">Egetræ</a> &mdash; <a href="/bryllup/">Bryllup</a> &mdash; <a href="/kobberbryllup/">Kobberbryllup</a> &mdash; <a href="/soelvbryllup/">Sølvbryllup</a> &mdash; <a href="/guldbryllup/">Guldbryllup</a> &mdash; <a href="/gavekort/">Gavekort</a> &mdash; <a href="https://bordkort.dk/">Bordkort</a> &mdash; <a href="/fodselstavle/">Fødselstavle</a> &mdash; <a href="/velkomst-skilt/">Velkomstskilt</a> &mdash; <a href="/andre-skilte/">Andre skilte</a> &mdash; <a href="/dekorations-kranse/">Dekorations kranse</a> &mdash; <a href="/eget-design/">Eget design</a> &mdash; <a href="/om-os/">Om os</a></p>
+            <p>&copy; 2026 Æresportskilt.dk. Alle rettigheder forbeholdes. &mdash; <a href="/hjerte/">Hjerte</a> &mdash; <a href="/vaabenskjold/">Våbenskjold</a> &mdash; <a href="/egetrae/">Egetræ</a> &mdash; <a href="/bryllup/">Bryllup</a> &mdash; <a href="/kobberbryllup/">Kobberbryllup</a> &mdash; <a href="/soelvbryllup/">Sølvbryllup</a> &mdash; <a href="/guldbryllup/">Guldbryllup</a> &mdash; <a href="/gavekort/">Gavekort</a> &mdash; <a href="https://bordkort.dk/">Bordkort</a> &mdash; <a href="/fodselstavle/">Fødselstavle</a> &mdash; <a href="/velkomst-skilt/">Velkomstskilt</a> &mdash; <a href="/andre-skilte/">Andre skilte</a> &mdash; <a href="/dekorations-kranse/">Dekorationskranse</a> &mdash; <a href="/eget-design/">Eget design</a> &mdash; <a href="/om-os/">Om os</a></p>
         </div>
     </footer>"""
 
