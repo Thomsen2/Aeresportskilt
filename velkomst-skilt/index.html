@@ -14,7 +14,7 @@
     <meta property="og:description" content="Velkomstskilt i træ til festen. Personlig tekst, håndlavet i Dragør.">
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/styles.css?v=243">
+    <link rel="stylesheet" href="/styles.css?v=293">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -241,5 +241,34 @@
         <img class="lightbox-img" id="lightboxImg" src="" alt="Forstørret produktbillede">
     </div>
     <div id="imgOverlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;justify-content:center;align-items:center;cursor:pointer;" onclick="this.style.display='none'"><img id="imgOverlayImg" src="" alt="Produktbillede i fuld størrelse" style="max-width:90vw;max-height:90vh;object-fit:contain;"></div>
+<script type="application/ld+json" id="produkt-data">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Product",
+      "name": "Velkomstskilt i Egetræfiner",
+      "sku": "velkomstskilt-i-egetraefiner",
+      "image": "https://pub-a65460f11bff4b4c9a65a6943613a5ef.r2.dev/velkomst-skilt.png",
+      "description": "mål ca. 78 x 45 cm. Laves på bestilling i Dragør.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Æresportskilt.dk"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://æresportskilt.dk/velkomst-skilt/",
+        "priceCurrency": "DKK",
+        "price": "350.00",
+        "availability": "https://schema.org/PreOrder",
+        "seller": {
+          "@type": "Organization",
+          "name": "Æresportskilt.dk"
+        }
+      }
+    }
+  ]
+}
+</script>
 </body>
 </html>
