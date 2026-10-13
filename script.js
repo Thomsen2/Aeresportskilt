@@ -438,8 +438,7 @@
     }
 
     var aesportCatalogIds = ['hjerte', 'vaabenskjold', 'bryllup'];
-    var aesportBirkefiner = document.getElementById('hjerte');
-    if (onAesportHome && aesportBirkefiner && aesportBirkefiner.classList.contains('tab-section')) {
+    if (onAesportHome) {
         var aesportHomeView = 'forside';
         var legacyHeartHashes = { birkefiner: 'hjerte', egetrae: 'hjerte', version1: 'hjerte', version2: 'hjerte' };
 
