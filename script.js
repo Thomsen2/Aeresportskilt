@@ -789,7 +789,7 @@ document.querySelectorAll('.sign-form').forEach(function (form) {
         })
         .then(function (resp) {
             if (resp.ok) {
-                showSiteMessage('Tak! Din forespørgsel er sendt. Hold øje med din mail, for bekræftelse af design og betaling');
+                showSiteMessage('Tak! Din forespørgsel er sendt. Hold øje med din mail, for bekræftelse af design og betaling, inden produktion af dit skilt');
                 btn.closest('form').querySelectorAll('textarea, input[type="text"], input[type="email"], input[type="tel"]').forEach(function (el) { el.value = ''; });
                 btn.closest('form').querySelectorAll('input[type="checkbox"]').forEach(function (el) { el.checked = false; });
                 btn.closest('form').querySelectorAll('.shipping-fields, .pickup-fields').forEach(function (el) { el.classList.remove('visible'); });
