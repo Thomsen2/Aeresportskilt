@@ -15,7 +15,7 @@
     <meta property="og:image" content="https://pub-a65460f11bff4b4c9a65a6943613a5ef.r2.dev/lily%20og%20harald%20egetr%C3%A6.png">
     <meta property="og:image:alt" content="Æresportskilt våbenskjold i egetræ">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/styles.css?v=298">
+    <link rel="stylesheet" href="/styles.css?v=304">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -332,7 +332,7 @@
     <footer>
         <div class="container">
             <p class="footer-contact">Bo Thomsen &middot; 2791 Dragør &middot; CVR 44597209 &middot; <a href="mailto:Thomsen2@gmail.com">Thomsen2@gmail.com</a></p>
-            <p>&copy; 2026 Æresportskilt.dk. Alle rettigheder forbeholdes. &mdash; <a href="/hjerte/">Hjerte</a> &mdash; <a href="/vaabenskjold/">Våbenskjold</a> &mdash; <a href="/egetrae/">Egetræ</a> &mdash; <a href="/bryllup/">Bryllup</a> &mdash; <a href="/kobberbryllup/">Kobberbryllup</a> &mdash; <a href="/soelvbryllup/">Sølvbryllup</a> &mdash; <a href="/guldbryllup/">Guldbryllup</a> &mdash; <a href="/gavekort/">Gavekort</a> &mdash; <a href="https://bordkort.dk/">Bordkort</a> &mdash; <a href="/fodselstavle/">Fødselstavle</a> &mdash; <a href="/velkomst-skilt/">Velkomstskilt</a> &mdash; <a href="/andre-skilte/">Andre skilte</a> &mdash; <a href="/dekorations-kranse/">Dekorationskranse</a> &mdash; <a href="/eget-design/">Eget design</a> &mdash; <a href="/historie/">Historie</a> &mdash; <a href="/om-os/">Om os</a></p>
+            <p>&copy; 2026 Æresportskilt.dk. Alle rettigheder forbeholdes. &mdash; <a href="/hjerte/">Hjerte</a> &mdash; <a href="/vaabenskjold/">Våbenskjold</a> &mdash; <a href="/egetrae/">Egetræ</a> &mdash; <a href="/bryllup/">Bryllup</a> &mdash; <a href="/kobberbryllup/">Kobberbryllup</a> &mdash; <a href="/soelvbryllup/">Sølvbryllup</a> &mdash; <a href="/guldbryllup/">Guldbryllup</a> &mdash; <a href="/gavekort/">Gavekort</a> &mdash; <a href="https://bordkort.dk/">Bordkort</a> &mdash; <a href="/fodselstavle/">Fødselstavle</a> &mdash; <a href="/velkomst-skilt/">Velkomstskilt</a> &mdash; <a href="/andre-skilte/">Andre skilte</a> &mdash; <a href="/dekorations-kranse/">Dekorationskranse</a> &mdash; <a href="/eget-design/">Eget design</a> &mdash; <a href="/historie/">Historie</a> &mdash; <a href="/om-os/">Om os</a> &mdash; <a href="/om-os/#anmeldelser">Anmeldelser</a></p>
         </div>
     </footer>
     <form name="anmeldelse" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden aria-hidden="true">
@@ -361,6 +361,11 @@
         <input type="email" name="Mail">
         <input type="tel" name="Mobil">
     </form>
+    <aside class="review-ticker" id="reviewTicker" hidden>
+        <p class="review-ticker__label">Anmeldelser</p>
+        <p class="review-ticker__text"></p>
+        <p class="review-ticker__meta"></p>
+    </aside>
     <script src="/script.js?v=72"></script>
     <script>
     document.querySelectorAll('.review-form').forEach(function (form) {
@@ -405,6 +410,31 @@
             });
         });
     });
+    (function () {
+        var liste = [
+            { navn: 'Lise', vurdering: '5 af 5', tekst: 'Super godt. havde lavet en tastefejl, som der blev spurgt indtil inden skiltet blev lavet, kunne have kostet mig et ektra skilt. Dejligt at nogle er vågne... TAK' },
+            { navn: 'Brian', vurdering: '5 af 5', tekst: 'Flot arbejde.' },
+            { navn: 'Heidi', vurdering: '5 af 5', tekst: 'Fantastisk flot arbejde. Efter godkendelse, kom skiltet præcis som jeg ville have det og enda hurtigere end forventet.' }
+        ];
+        var box = document.getElementById('reviewTicker');
+        if (!box || !liste.length) return;
+        var tekst = box.querySelector('.review-ticker__text');
+        var meta = box.querySelector('.review-ticker__meta');
+        var i = 0;
+        function vis() {
+            var item = liste[i % liste.length];
+            tekst.textContent = item.tekst;
+            meta.textContent = item.navn + ' · ' + item.vurdering;
+            box.hidden = false;
+        }
+        vis();
+        if (liste.length > 1) {
+            setInterval(function () {
+                i += 1;
+                vis();
+            }, 20000);
+        }
+    })();
     </script>
     <div class="lightbox" id="lightbox" style="display:none">
         <span class="lightbox-close">&times;</span>

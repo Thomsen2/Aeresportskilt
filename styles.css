@@ -822,7 +822,8 @@ body {
     animation: sectionIn 0.45s var(--ease);
 }
 
-#faq {
+#faq,
+#anmeldelser {
     scroll-margin-top: 5.5rem;
 }
 
@@ -1566,6 +1567,71 @@ body.hide-aesport-intro > .faq-section {
     opacity: 0.65;
     cursor: wait;
     transform: none;
+}
+
+.review-ticker {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 40;
+    width: min(16rem, calc(100vw - 2rem));
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 0.8rem 0.9rem 0.75rem;
+}
+
+.review-ticker__label {
+    margin: 0 0 0.3rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.review-ticker__text {
+    margin: 0 0 0.4rem;
+    font-size: 0.92rem;
+    line-height: 1.4;
+}
+
+.review-ticker__meta {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+}
+
+.review-list {
+    list-style: none;
+    max-width: 640px;
+    margin: 1.25rem auto 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    text-align: left;
+}
+
+.review-list__item {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 0.95rem 1.05rem;
+}
+
+.review-list__text {
+    margin: 0 0 0.45rem;
+    color: var(--ink);
+    font-size: 1.02rem;
+    line-height: 1.55;
+}
+
+.review-list__meta {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
 }
 
 .checkbox-label {
