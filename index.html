@@ -15,7 +15,7 @@
     <meta property="og:image" content="https://pub-a65460f11bff4b4c9a65a6943613a5ef.r2.dev/lily%20og%20harald%20egetr%C3%A6.png">
     <meta property="og:image:alt" content="Æresportskilt våbenskjold i egetræ">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/styles.css?v=291">
+    <link rel="stylesheet" href="/styles.css?v=297">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -300,12 +300,49 @@
     </section>
         </div>
     </section>
+    <section class="intro" id="anmeldelse">
+        <div class="container">
+            <h2>Skriv en anmeldelse</h2>
+            <div class="form-area" style="max-width:520px;margin:0 auto">
+                <form class="review-form">
+                    <div class="form-group">
+                        <label for="anmeldelse-navn">Navn</label>
+                        <input type="text" id="anmeldelse-navn" name="navn" autocomplete="name" placeholder="Dit navn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="anmeldelse-vurdering">Vurdering</label>
+                        <select id="anmeldelse-vurdering" name="vurdering" required>
+                            <option value="">Vælg 1 til 5</option>
+                            <option value="5 af 5">5 af 5</option>
+                            <option value="4 af 5">4 af 5</option>
+                            <option value="3 af 5">3 af 5</option>
+                            <option value="2 af 5">2 af 5</option>
+                            <option value="1 af 5">1 af 5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="anmeldelse-tekst">Anmeldelse</label>
+                        <textarea id="anmeldelse-tekst" name="anmeldelse" rows="5" placeholder="Skriv et par ord om skiltet..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send til gennemgang</button>
+                </form>
+            </div>
+        </div>
+    </section>
     <footer>
         <div class="container">
             <p class="footer-contact">Bo Thomsen &middot; 2791 Dragør &middot; CVR 44597209 &middot; <a href="mailto:Thomsen2@gmail.com">Thomsen2@gmail.com</a></p>
             <p>&copy; 2026 Æresportskilt.dk. Alle rettigheder forbeholdes. &mdash; <a href="/hjerte/">Hjerte</a> &mdash; <a href="/vaabenskjold/">Våbenskjold</a> &mdash; <a href="/egetrae/">Egetræ</a> &mdash; <a href="/bryllup/">Bryllup</a> &mdash; <a href="/kobberbryllup/">Kobberbryllup</a> &mdash; <a href="/soelvbryllup/">Sølvbryllup</a> &mdash; <a href="/guldbryllup/">Guldbryllup</a> &mdash; <a href="/gavekort/">Gavekort</a> &mdash; <a href="https://bordkort.dk/">Bordkort</a> &mdash; <a href="/fodselstavle/">Fødselstavle</a> &mdash; <a href="/velkomst-skilt/">Velkomstskilt</a> &mdash; <a href="/andre-skilte/">Andre skilte</a> &mdash; <a href="/dekorations-kranse/">Dekorationskranse</a> &mdash; <a href="/eget-design/">Eget design</a> &mdash; <a href="/historie/">Historie</a> &mdash; <a href="/om-os/">Om os</a></p>
         </div>
     </footer>
+    <form name="anmeldelse" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden aria-hidden="true">
+        <input type="text" name="bot-field">
+        <input type="hidden" name="form-name" value="anmeldelse">
+        <input type="text" name="subject">
+        <input type="text" name="Navn">
+        <input type="text" name="Vurdering">
+        <textarea name="Anmeldelse"></textarea>
+    </form>
     <form name="bestilling" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden aria-hidden="true">
         <input type="text" name="bot-field">
         <input type="hidden" name="form-name" value="bestilling">
@@ -325,6 +362,50 @@
         <input type="tel" name="Mobil">
     </form>
     <script src="/script.js?v=72"></script>
+    <script>
+    document.querySelectorAll('.review-form').forEach(function (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var navn = form.querySelector('[name="navn"]').value.trim();
+            var vurdering = form.querySelector('[name="vurdering"]').value.trim();
+            var tekst = form.querySelector('[name="anmeldelse"]').value.trim();
+            if (!navn || !vurdering || !tekst) {
+                showSiteMessage('Udfyld navn, vurdering og anmeldelse.');
+                return;
+            }
+            var btn = form.querySelector('.btn-submit');
+            btn.textContent = 'Sender...';
+            btn.disabled = true;
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({
+                    'form-name': 'anmeldelse',
+                    'bot-field': '',
+                    subject: 'Anmeldelse til gennemgang – ikke publiceret',
+                    Navn: navn,
+                    Vurdering: vurdering,
+                    Anmeldelse: tekst
+                }).toString()
+            })
+            .then(function (resp) {
+                if (resp.ok) {
+                    form.reset();
+                    showSiteMessage('Tak. Din anmeldelse er sendt til gennemgang. Den bliver ikke vist på siden, før den er godkendt.');
+                } else {
+                    showSiteMessage('Fejl: Kunne ikke sende anmeldelsen. Prøv igen.');
+                }
+            })
+            .catch(function () {
+                showSiteMessage('Fejl: Kunne ikke sende anmeldelsen. Prøv igen.');
+            })
+            .finally(function () {
+                btn.textContent = 'Send til gennemgang';
+                btn.disabled = false;
+            });
+        });
+    });
+    </script>
     <div class="lightbox" id="lightbox" style="display:none">
         <span class="lightbox-close">&times;</span>
         <img class="lightbox-img" id="lightboxImg" src="" alt="Forstørret produktbillede">

@@ -1518,7 +1518,8 @@ body.hide-aesport-intro > .faq-section {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
     padding: 0.65rem 0.75rem;
     border: 1.5px solid var(--line);
     border-radius: 12px;
@@ -1530,7 +1531,8 @@ body.hide-aesport-intro > .faq-section {
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
     outline: none;
     border-color: var(--oak);
     box-shadow: 0 0 0 3px rgba(154, 107, 63, 0.15);
