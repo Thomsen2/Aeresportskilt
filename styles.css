@@ -224,6 +224,36 @@ body {
     overflow: visible;
 }
 
+button.nav-link {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    letter-spacing: 0.01em;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+button.nav-link:hover,
+button.nav-link.active {
+    color: var(--ink);
+}
+
+button.nav-link.active {
+    font-weight: 600;
+}
+
+.nav-caret {
+    width: 0.32rem;
+    height: 0.32rem;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-1px);
+    margin-left: 0.05rem;
+    flex-shrink: 0;
+}
+
 .main-nav a:hover,
 .main-nav a.active {
     color: var(--ink);
@@ -288,7 +318,9 @@ body {
     animation: menuIn 0.2s var(--ease);
 }
 
-.nav-dropdown:hover .nav-submenu {
+.nav-dropdown:hover .nav-submenu,
+.nav-dropdown:focus-within .nav-submenu,
+.nav-dropdown.is-open .nav-submenu {
     display: block;
 }
 
@@ -2065,7 +2097,8 @@ footer a:hover {
         animation: menuIn 0.25s var(--ease);
     }
 
-    .nav-link {
+    .nav-link,
+    button.nav-link {
         padding: 0.85rem 0.65rem;
         font-size: 1rem;
     }

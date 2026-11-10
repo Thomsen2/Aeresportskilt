@@ -90,16 +90,24 @@
             var path = href.split('#')[0];
             var isSeoPath = /^\/[a-z0-9-]+\/?$/.test(path);
 
-            if (this.classList.contains('nav-link') && this.closest('.nav-dropdown') && window.matchMedia('(max-width: 780px)').matches) {
+            if (this.classList.contains('nav-link') && this.closest('.nav-dropdown')) {
                 var dd = this.closest('.nav-dropdown');
-                if (dd.querySelector('.nav-submenu') && !e.target.closest('.nav-sub-link')) {
+                var mobile = window.matchMedia('(max-width: 780px)').matches;
+                if ((this.tagName === 'BUTTON' || mobile) && dd.querySelector('.nav-submenu') && !e.target.closest('.nav-sub-link')) {
                     var already = dd.classList.contains('is-open');
                     document.querySelectorAll('.nav-dropdown.is-open').forEach(function (d) {
                         d.classList.remove('is-open');
+                        var trigger = d.querySelector('.nav-link');
+                        if (trigger) trigger.setAttribute('aria-expanded', 'false');
                     });
                     if (!already) {
                         e.preventDefault();
                         dd.classList.add('is-open');
+                        this.setAttribute('aria-expanded', 'true');
+                        return;
+                    }
+                    if (this.tagName === 'BUTTON') {
+                        e.preventDefault();
                         return;
                     }
                 }
