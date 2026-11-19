@@ -206,14 +206,14 @@
     },
     {
       "section": "birkefiner",
-      "description": "Æresportskilt hjerte Halv hjerte i birkefiner (150 kr), Størrelse 31 x 33 cm",
-      "title": "Æresportskilt hjerte Halv hjerte i birkefiner",
+      "description": "Æresportskilt Halvt hjerte (12½år) i birkefiner (150 kr), Størrelse 31 x 33 cm",
+      "title": "Æresportskilt Halvt hjerte (12½år) i birkefiner",
       "size": "Størrelse 31 x 33 cm",
       "price": "150,00 kr.",
       "images": [
         {
-          "src": "https://pub-a65460f11bff4b4c9a65a6943613a5ef.r2.dev/halv%20hjerte.jpeg",
-          "alt": "Halvt hjerte skilt i birkefiner",
+          "src": "https://pub-a65460f11bff4b4c9a65a6943613a5ef.r2.dev/halv-hjerte-birkefiner.jpg",
+          "alt": "Halvt hjerte i birkefiner graveret med Tillykke, navne og 12½ år",
           "hidden": false
         }
       ],
